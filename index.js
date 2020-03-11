@@ -3,15 +3,14 @@ const driver = {};
 
 
 function updateDriverWithKeyAndValue(driver, key, value) {
-    const newObject = {};
-    newObject[key] = value;
-    return Object.assign({}, driver, newObject);
+    // const newObject = {};
+    // newObject[key] = value;
+    return Object.assign({}, driver, {[key]:value});
 }
 
 function destructivelyUpdateDriverWithKeyAndValue(driver, key, value){
-    const newObject = {};
-    newObject[key] = value;
-    return Object.assign(driver, newObject);
+    driver[key]=value;
+    return driver;
 }
 
 function deleteFromDriverByKey(driver, key) {
